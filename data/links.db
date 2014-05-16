@@ -1,0 +1,2 @@
+system/cleankernel /usr/local/bin
+utils/updateutils /usr/local/bin

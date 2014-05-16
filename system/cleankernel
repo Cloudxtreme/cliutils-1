@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#Get current version of kernel avoid ‘-generic’
+current=$(uname -r|cut -f1,2 -d "-") 
+
+#Get list of old images and headers
+oldheaders=$(dpkg -l linux-header* | awk '/^ii/{print $2}' | grep [0-9] | grep -v $current )
+oldkernels=$(dpkg -l linux-image* | awk '/^ii/{print $2}' | grep [0-9] | grep -v $current   )
+
+oldelements="$oldkernels $oldheaders"
+
+if [ ! -z "$oldelements" -a "$oldelements" != " " ]; then
+
+	#Format list of elements for dialog
+	formated_list=""
+
+	for element in ${oldelements} 
+	do
+
+	        formated_list="$formated_list $element $element on "
+
+	done
+
+	#Show menu of removable elements
+	res=$(dialog --stdout --checklist "Current version: $current" 0 0 5 $formated_list)
+
+	clear
+
+	if [ ! -z "$res" ]; then
+
+		#Remove quotes
+		res=$(echo $res | sed s/\"//g)
+
+		apt-get --purge remove $res
+	else
+
+		echo ""
+		echo "Operation aborted by user."
+		echo ""
+
+	fi
+
+else
+
+	echo ""
+	echo "No removable elements found."
+	echo ""
+
+fi
