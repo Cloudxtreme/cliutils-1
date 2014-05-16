@@ -1,2 +1,3 @@
 system/cleankernel /usr/local/bin
+system/upgrade /usr/local/bin
 utils/updateutils /usr/local/bin
