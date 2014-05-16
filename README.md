@@ -18,7 +18,7 @@ Running updateutils will pull automatically from this repository and link all ne
 Scripts Description
 ===================
 
-* utils/updateutils: Install and update this repository in a computer.
-* system/cleankernel: Search old linux kernel and linux headers and show in a menu for remove. Needs dialog package.
+* **utils/updateutils**: Install and update this repository in a computer.
+* **system/cleankernel**: Search old linux kernel and linux headers and show in a menu for remove. Needs dialog package.
 
 
