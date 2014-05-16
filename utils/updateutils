@@ -6,13 +6,18 @@ cd ..
 
 git pull https://github.com/mansonjesus/cliutils.git master
 
-cd $(dirname $(realpath $0))
+#cd $(dirname $(realpath $0))
 
 while read origin dest; do
+
     ln -s $(pwd)/$origin $dest 2>/dev/null
+
     if [ $? -ne 0 ]
     then 
         sudo ln -s $(pwd)/$origin $dest 2>/dev/null
+        sudo chmod +x $origin
+    else
+        chmod +x $origin
     fi
-done < ../data/links.db
+done < data/links.db
 
