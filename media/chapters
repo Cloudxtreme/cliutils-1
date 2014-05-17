@@ -1,0 +1,19 @@
+#!/bin/bash
+
+acumulado=0
+iteracion=1
+
+for i in *.mkv 
+do
+	dur=$(avprobe $i 2>&1 | awk '/Duration/ {print $2}')
+	dur=${dur%.*}
+	tim=$(date -d "1 jan 1970 $dur" +"%H:%M:%S")
+	sec=$(date -d "1 jan 1970 $dur +1 hour" +%s)
+	iteracionf=$(printf "%02d" $iteracion)
+	echo "CHAPTER$iteracionf=$(date -d "1 jan 1970 +$acumulado seconds" +"%H:%M:%S").000" >> chapters.txt
+	echo "CHAPTER"$iteracionf"NAME=${i%.*}" >> chapters.txt
+
+	acumulado=$(( acumulado+sec ))
+	iteracion=$(( iteracion + 1 ))
+
+done

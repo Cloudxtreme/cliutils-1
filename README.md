@@ -21,5 +21,5 @@ Scripts Description
 * **utils/updateutils**: Install and update this repository in a computer.
 * **system/cleankernel**: Search old linux kernel and linux headers and show in a menu for remove. Needs dialog package.
 * **system/upgrade**: Run a aptitude safe-upgrade and then cleans apt cache. Needs aptitude package.
-
+* **media/chapters**: Create a chapters.txt file with mkv file clips in folder. Needs avprobe.
 

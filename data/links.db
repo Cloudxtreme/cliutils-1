@@ -1,3 +1,4 @@
 system/cleankernel /usr/local/bin
 system/upgrade /usr/local/bin
 utils/updateutils /usr/local/bin
+media/chapters /usr/local/bin
