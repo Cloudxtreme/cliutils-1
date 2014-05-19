@@ -23,3 +23,18 @@ Scripts Description
 * **system/upgrade**: Run aptitude safe-upgrade and then cleans apt cache. Needs aptitude package.
 * **media/chapters**: Create a chapters.txt file with mkv file clips in folder. Needs avprobe.
 
+Directory Tree
+==============
+.
+├── data
+│   └── links.db
+├── media
+│   └── chapters
+├── README.md
+├── system
+│   ├── cleankernel
+│   └── upgrade
+└── utils
+    └── updateutils
+
+4 directories, 6 files
