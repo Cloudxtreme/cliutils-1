@@ -4,20 +4,22 @@ cd $(dirname $(readlink -f $0))
 
 cd ..
 
-git pull https://github.com/mansonjesus/cliutils.git master
+git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
 
 #cd $(dirname $(realpath $0))
 
-while read origin dest; do
 
-    ln -s $(pwd)/$origin $dest 2>/dev/null
+if [[ ! $? -eq 0 ]]; then
+    while read origin dest; do
 
-    if [ $? -ne 0 ]
-    then 
-        sudo ln -s $(pwd)/$origin $dest 2>/dev/null
-        sudo chmod +x $origin
-    else
-        chmod +x $origin
-    fi
-done < data/links.db
+        ln -s $(pwd)/$origin $dest 2>/dev/null
 
+        if [ $? -ne 0 ]
+        then 
+            sudo ln -s $(pwd)/$origin $dest 2>/dev/null
+            sudo chmod +x $origin
+        else
+            chmod +x $origin
+        fi
+    done < data/links.db
+fi
