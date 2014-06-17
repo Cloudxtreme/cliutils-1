@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#@TODO: Autocompletation
 function go {
     
     MARKPATH="/tmp/marks"
