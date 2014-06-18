@@ -1,12 +1,12 @@
 #!/bin/bash
 
+#@TODO: Uninstall
+
 cd $(dirname $(readlink -f $0))
 
 cd ..
 
 git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
-
-#cd $(dirname $(realpath $0))
 
 
 if [[ ! $? -eq 0 ]]; then
