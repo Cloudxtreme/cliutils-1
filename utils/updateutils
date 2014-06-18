@@ -4,12 +4,14 @@
 #@TODO: Test if go exists (type go && exists || don't exists). If not, remember to include lib in rc file
 #@TODO: Create library to link in rc file
 
-cd $(dirname $(readlink -f $0))
+utilpath=$(dirname $(readlink -f $0))
+cd $utilpath
 
 cd ..
 
-git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
+utilpath=$(pwd)
 
+git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
 
 if [[ ! $? -eq 0 ]]; then
     while read origin dest; do
@@ -25,3 +27,5 @@ if [[ ! $? -eq 0 ]]; then
         fi
     done < data/links.db
 fi
+
+type go &>/dev/null || echo -e "\n Please insent next code in youn shell nc file:\n\n\tsource \"$utilpath/lib/func\"\n\n"
