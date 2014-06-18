@@ -11,7 +11,7 @@ cd ..
 
 utilpath=$(pwd)
 
-#git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
+git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
 
 if [[ ! $? -eq 0 ]]; then
     while read origin dest; do
@@ -28,7 +28,8 @@ if [[ ! $? -eq 0 ]]; then
     done < data/links.db
 fi
 
-type go &>/dev/null || 
+type go &>/dev/null || { 
 	echo -e "\n Please insent next code in youn shell rc file:\n\n\tsource \"$utilpath/lib/func\"\n\n"; \
-	"$utilpath/lib/func"
+	sh "$utilpath/lib/func"
+}
 
