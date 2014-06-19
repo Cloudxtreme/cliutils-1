@@ -2,8 +2,6 @@
 
 #@TODO: Autocompletation
 
-export CLIUTILS=$(dirname $(readlink -f $0))
-
 function go {
     
     MARKPATH="/tmp/marks"
@@ -36,3 +34,8 @@ function go {
    esac            
 
 }
+
+cd `dirname $(readlink -f $0)`
+cd ..
+export CLIUTILS=$(pwd)
+echo $CLIUTILS
