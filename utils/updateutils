@@ -28,8 +28,7 @@ if [[ ! $? -eq 0 ]]; then
     done < data/links.db
 fi
 
-go &>/dev/null
-if [[ ! $? -eq 0 ]]; then  
+if [[ -z $CLIUTILS ]]; then
 	echo -e "\n Please insent next code in youn shell rc file:\n\n\tsource \"$utilpath/lib/func\"\n\n"; 
 	$utilpath/lib/func
 fi
