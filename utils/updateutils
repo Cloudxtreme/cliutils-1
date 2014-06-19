@@ -1,8 +1,6 @@
 #!/bin/bash
 
 #@TODO: Uninstall
-#@TODO: Test if go exists (type go && exists || don't exists). If not, remember to include lib in rc file
-#@TODO: Create library to link in rc file
 
 utilpath=$(dirname $(readlink -f $0))
 cd $utilpath

@@ -38,4 +38,3 @@ function go {
 cd `dirname $(readlink -f $0)`
 cd ..
 export CLIUTILS=$(pwd)
-echo $CLIUTILS
