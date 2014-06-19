@@ -12,8 +12,10 @@ utilpath=$(pwd)
 git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
 
 if [[ ! $? -eq 0 ]]; then
+	echo "INSTALL"
     while read origin dest; do
 
+		echo $origin
         ln -s $(pwd)/$origin $dest 2>/dev/null
 
         if [ $? -ne 0 ]
@@ -23,7 +25,13 @@ if [[ ! $? -eq 0 ]]; then
         else
             chmod +x $origin
         fi
-    done < data/links.db
+	done < <(awk '/INSTALL/,/^$/' data/links.db | tail -n +2 | head -n -1)
+
+	echo "DEINSTALL"
+	while read file; do
+		echo $file
+		sudo rm $file 2>/dev/null
+	done < <(awk '/DEPRECATED/,/^$/' data/links.db | tail -n +2 | head -n -1)
 fi
 
 if [[ -z $CLIUTILS ]]; then

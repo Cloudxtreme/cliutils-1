@@ -1,5 +1,9 @@
+##INSTALL
 system/cleankernel /usr/local/bin
 system/upgrade /usr/local/bin
 utils/updateutils /usr/local/bin
 media/chapters /usr/local/bin
-utils/cds_func /usr/local/bin
+
+##DEPRECATED
+/usr/local/bin/cds_func
+
