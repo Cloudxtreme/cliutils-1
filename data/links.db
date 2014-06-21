@@ -3,6 +3,7 @@ system/cleankernel /usr/local/bin
 system/upgrade /usr/local/bin
 utils/updateutils /usr/local/bin
 media/chapters /usr/local/bin
+kde/pwrdisable /usr/local/bin
 
 ##DEPRECATED
 /usr/local/bin/cds_func

@@ -6,9 +6,8 @@ Some utils for linux cli for *ubuntu.
 Installation
 ============
 
-1. Create a dir for clone this repository. I.E. ~/msjcliutils.
-2. Run git clone https://github.com/mansonjesus/cliutils.git.
-3. Then run sh utils/updateutils. This will link all scripts into /usr/local/bin.
+1. Run git clone https://github.com/mansonjesus/cliutils.git.
+2. Then run sh utils/updateutils. This will link all scripts into /usr/local/bin.
 
 Update
 ======
@@ -18,6 +17,7 @@ Running updateutils will pull automatically from this repository and link all ne
 Scripts Description
 ===================
 
+* **kde/pwrdisable**: Disable KDE screensaver / power management for the number of minutes entered.
 * **media/chapters**: Create a chapters.txt file with mkv file clips in folder. Needs avprobe.
 * **utils/updateutils**: Install and update this repository in a computer.
 * **utils/cd_func**: Include a function (go) to manage temporal folder marks.
