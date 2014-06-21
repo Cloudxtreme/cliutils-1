@@ -11,7 +11,7 @@ utilpath=$(pwd)
 
 git pull https://github.com/mansonjesus/cliutils.git master 1>&1 | grep "Already up-to-date."
 
-if [[ ! $? -eq 0 ]]; then
+if [[ ! $? -eq 0 || $1 == "-f" ]]; then
 	echo "INSTALL"
     while read origin dest; do
 

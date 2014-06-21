@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Minutes of inhabilititation:"
+read minutes
+
+(while :; do qdbus org.kde.screensaver /ScreenSaver SimulateUserActivity; sleep 50s; done)& sleep $[$minutes*60]; kill $!
