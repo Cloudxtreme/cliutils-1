@@ -2,5 +2,13 @@
 
 echo "Minutes of inhabilititation:"
 read minutes
-
-(while :; do qdbus org.kde.screensaver /ScreenSaver SimulateUserActivity; sleep 50s; done)& sleep $[$minutes*60]; kill $!
+count=$minutes
+(while :; 
+do 
+	echo "$count left"
+	qdbus org.kde.screensaver /ScreenSaver SimulateUserActivity; 
+	sleep 50s; 
+	count=$[ $count - 1 ]
+done)& 
+sleep $[$minutes*60]; 
+kill $!
