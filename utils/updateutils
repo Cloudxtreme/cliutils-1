@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#@TODO: Uninstall
-
 utilpath=$(dirname $(readlink -f $0))
 cd $utilpath
 
