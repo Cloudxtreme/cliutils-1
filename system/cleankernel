@@ -32,6 +32,12 @@ if [ ! -z "$oldelements" -a "$oldelements" != " " ]; then
 		res=$(echo $res | sed s/\"//g)
 
 		apt-get --purge remove $res
+
+		if [ $? -ne 0 ]
+		then
+			sudo apt-get --purge remove $res
+		fi
+
 	else
 
 		echo ""
