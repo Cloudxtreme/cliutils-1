@@ -7,7 +7,7 @@ count=$minutes
 do 
 	echo "$count left"
 	qdbus org.kde.screensaver /ScreenSaver SimulateUserActivity; 
-	sleep 50s; 
+	sleep 60s; 
 	count=$[ $count - 1 ]
 done)& 
 sleep $[$minutes*60]; 
