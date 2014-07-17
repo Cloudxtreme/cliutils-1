@@ -34,7 +34,9 @@ function go {
    esac            
 
 }
-
-cd `dirname $(readlink -f $0)`
+pushd .
+cd `dirname $(readlink -e $(which updateutils))`
 cd ..
 export CLIUTILS=$(pwd)
+popd
+clear
