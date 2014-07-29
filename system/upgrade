@@ -1,13 +1,12 @@
 #!/bin/bash
 
-aptitude update 2>/dev/null
-
-if [ $? -ne 0 ]
+if [ $EUID -ne 0 ]
 then
     sudo aptitude update 2>/dev/null
     sudo aptitude -y safe-upgrade
     sudo aptitude clean
 else
+	aptitude update 
     aptitude -y safe-upgrade
     aptitude clean
 fi
