@@ -2,6 +2,8 @@
 system/cleankernel /usr/local/bin
 system/upgrade /usr/local/bin
 utils/updateutils /usr/local/bin
+utils/queuesvr /usr/local/bin/
+utils/queue /usr/local/bin/
 media/chapters /usr/local/bin
 kde/pwrdisable /usr/local/bin
 
