@@ -1,39 +1,5 @@
 #!/bin/bash
 
-#@TODO: Autocompletation
-
-function go {
-    
-    MARKPATH="/tmp/marks"
-
-    case $1 in 
-        ls) 
-            if [[ ! -e $MARKPATH ]]; then mkdir $MARKPATH; fi
-            ls -l $MARKPATH | cut -d' ' -f9- 2>/dev/null || echo "No marks.";
-            ;;
-        
-        push) 
-            mkdir -p "$MARKPATH";
-            ln -s "$(pwd)" "$MARKPATH/$(basename $(pwd))"
-            ;;
-        
-        cd)
-            shift;
-            cd -P "$MARKPATH/$1" 2>/dev/null || echo "Mark not found.";
-            ;;
-
-        rm)
-            shift;
-            rm -i "$MARKPATH/$1"
-            ;;
-
-        mv)
-            shift;
-            mv "$MARKPATH/$1" "$MARKPATH/$2"
-            ;;
-   esac            
-
-}
 pushd .
 cd `dirname $(readlink -e $(which updateutils))`
 cd ..
