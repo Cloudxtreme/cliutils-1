@@ -1,4 +1,5 @@
 ##INSTALL
+tmux/dualpane /usr/local/bin
 system/cleankernel /usr/local/bin
 system/upgrade /usr/local/bin
 utils/updateutils /usr/local/bin
