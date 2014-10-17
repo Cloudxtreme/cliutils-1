@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -p "Name:" name
+read -p "Email:" email
+read -p "Core editor[vim]:" editor
+read -p "Merge tool[vimdiff]:" difftool
+
+git config --global user.name "$name"
+git config --global user.email "$email"
+git config --global core.editor "$editor"
+git config --global merge.tool "$difftool"

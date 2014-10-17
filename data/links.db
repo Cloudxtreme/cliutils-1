@@ -4,6 +4,7 @@ media/chapters /usr/local/bin
 system/cleankernel /usr/local/bin
 system/upgrade /usr/local/bin
 tmux/dualpane /usr/local/bin
+utils/gitconf /usr/local/bin/
 utils/queue /usr/local/bin/
 utils/queuesvr /usr/local/bin/
 utils/updaterepos /usr/local/bin/

@@ -19,6 +19,7 @@ Scripts Description
 
 * **kde/pwrdisable**: Disable KDE screensaver / power management for the number of minutes entered.
 * **media/chapters**: Create a chapters.txt file with mkv file clips in folder. Needs avprobe.
+* **utils/gitconf**: Prompt for global git config.
 * **utils/updateutils**: Install and update this repository in a computer.
 * **utils/updaterepos**: Update repo list given by ~/.local/repos.txt
 * **utils/queuesvr**: Run a server to receive and queue commands through queue command.
