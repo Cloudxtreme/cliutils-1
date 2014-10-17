@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# @TODO: Check if repos.txt exist. If not create.
 while read repo
 do
 
