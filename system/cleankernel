@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# @TODO: Migrate to python?
+
 #Get current version of kernel avoid ‘-generic’
 current=$(uname -r|cut -f1,2 -d "-") 
 

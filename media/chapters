@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# @TODO: Add help
+# @TODO: Migrate to python?
+
 acumulado=0
 iteracion=1
 
