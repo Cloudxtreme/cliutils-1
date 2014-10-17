@@ -1,12 +1,16 @@
-#!/bin/bash
+#!/usr/bin/python
 
-# @TODO: Check if repos.txt exist. If not create.
-while read repo
-do
+import os
+import subprocess
 
-	cd $repo 2> /dev/null
-	echo $repo
-	git pull
-	echo ""
+# @TODO: Check if repos.txt exists. If not create one and edit it.
+f = open(os.path.expanduser('~/.local/repos.txt'), 'r+')
 
-done < ~/.local/repos.txt
+for line in f:
+	print line
+	pr=subprocess.Popen("git pull", cwd=os.path.expanduser(line.rstrip()), shell=True, stdout = subprocess.PIPE, stderr=subprocess.PIPE)
+	(out, error)=pr.communicate()
+# @TODO: Best format.
+	print str(out)
+
+
