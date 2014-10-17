@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while read repo
+do
+
+	cd $repo 2> /dev/null
+	echo $repo
+	git pull
+	echo ""
+
+done < ~/.local/repos.txt
