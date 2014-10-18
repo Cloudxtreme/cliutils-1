@@ -3,6 +3,7 @@
 import os
 import subprocess
 
+# @TODO: Execute update script instead git pull
 repos = '~/.local/repos.txt'
 
 if not os.path.exists(os.path.expanduser(repos)):
