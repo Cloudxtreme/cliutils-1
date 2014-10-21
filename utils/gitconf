@@ -5,9 +5,16 @@ read -p "Email:" email
 read -p "Core editor[vim]:" editor
 read -p "Merge tool[vimdiff]:" difftool
 read -p "Push default[simple/matching]:" pushdef
+read -p "Activate credential helper? [y/n]:" credential
 
 git config --global user.name "$name"
 git config --global user.email "$email"
 git config --global core.editor "$editor"
 git config --global merge.tool "$difftool"
 git config --global push.default "$pushdef"
+if [[ $credential =~ ^[Yy]$ ]]
+then
+	git config --global credential.helper cache
+else
+	git config --global --unset credential.helper 
+fi
