@@ -4,8 +4,9 @@ read -p "Name:" name
 read -p "Email:" email
 read -p "Core editor[vim]:" editor
 read -p "Merge tool[vimdiff]:" difftool
-read -p "Push default[simple/matching]:" pushdef
-read -p "Activate credential helper? [y/n]:" credential
+read -p "Push default[SIMPLE/matching]:" pushdef
+read -p "Activate credential helper? [Y/n]:" credential
+read -p "Credential timeout? [3600]:" timeout
 
 git config --global user.name "$name"
 git config --global user.email "$email"
@@ -14,7 +15,7 @@ git config --global merge.tool "$difftool"
 git config --global push.default "$pushdef"
 if [[ $credential =~ ^[Yy]$ ]]
 then
-	git config --global credential.helper cache
+	git config --global credential.helper cache --timeout=$timeout
 else
 	git config --global --unset credential.helper 
 fi
