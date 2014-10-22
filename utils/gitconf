@@ -3,10 +3,34 @@
 read -p "Name:" name
 read -p "Email:" email
 read -p "Core editor[vim]:" editor
+if [[ $editor == "" ]]
+then
+	editor="vim"
+fi
+
 read -p "Merge tool[vimdiff]:" difftool
+if [[ $difftool == "" ]]
+then
+	difftool="vimdiff"
+fi
+
 read -p "Push default[SIMPLE/matching]:" pushdef
+if [[ $pushdef == "" ]]
+then
+	pushdef="simple"
+fi
+
 read -p "Activate credential helper? [Y/n]:" credential
+if [[ $credential == "" ]]
+then
+	credential="y"
+fi
+
 read -p "Credential timeout? [3600]:" timeout
+if [[ $timeout == "" ]]
+then
+	timeout="3600"
+fi
 
 git config --global user.name "$name"
 git config --global user.email "$email"
