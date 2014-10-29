@@ -1,7 +1,0 @@
-#!/bin/bash
-
-trap 'rm /tmp/bashqueue; exit' SIGINT SIGTERM SIGKILL 
-
-mkfifo /tmp/bashqueue > /dev/null
-
-while true; do /bin/bash < /tmp/bashqueue ; done
