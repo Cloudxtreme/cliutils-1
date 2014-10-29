@@ -11,4 +11,5 @@ utils/updateutils /usr/local/bin
 ##DEPRECATED
 /usr/local/bin/cds_func
 /usr/local/bin/queue 
-/usr/local/bin/queuesvr 
+/usr/local/bin/queuesvr
+
