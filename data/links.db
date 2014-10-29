@@ -5,11 +5,10 @@ system/cleankernel /usr/local/bin
 system/upgrade /usr/local/bin
 tmux/dualpane /usr/local/bin
 utils/gitconf /usr/local/bin/
-utils/queue /usr/local/bin/
-utils/queuesvr /usr/local/bin/
 utils/updaterepos /usr/local/bin/
 utils/updateutils /usr/local/bin
 
 ##DEPRECATED
 /usr/local/bin/cds_func
-
+/usr/local/bin/queue 
+/usr/local/bin/queuesvr 
