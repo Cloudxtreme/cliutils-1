@@ -22,7 +22,6 @@ Scripts Description
 * **utils/gitconf**: Prompt for global git config.
 * **utils/updateutils**: Install and update this repository in a computer.
 * **utils/updaterepos**: Update repo list given by ~/.local/repos.txt
-* **lib/func**: Include autoload functions.
 * **system/cleankernel**: Search old linux kernel and linux headers and show in a menu for remove. Needs dialog package.
 * **system/upgrade**: Run aptitude safe-upgrade and then cleans apt cache. Needs aptitude package.
 
