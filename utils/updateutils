@@ -33,9 +33,3 @@ if [[ ! $? -eq 0 || $1 == "-f" ]]; then
 		sudo rm $file 2>/dev/null
 	done < <(awk '/DEPRECATED/,/^$/' data/links.db | tail -n +2 | head -n -1)
 fi
-
-if [[ -z $CLIUTILS ]]; then
-	echo -e "\n Please insent next code in youn shell rc file:\n\n\tsource \"$utilpath/lib/func\"\n\n"; 
-	$utilpath/lib/func
-fi
-
