@@ -8,10 +8,16 @@ then
 	editor="vim"
 fi
 
-read -p "Merge tool[vimdiff]:" difftool
+read -p "Diff tool[vimdiff]" difftool
 if [[ $difftool == "" ]]
 then
 	difftool="vimdiff"
+fi
+
+read -p "Merge tool[vimdiff]:" mergetool
+if [[ $mergetool == "" ]]
+then
+	mergetool="vimdiff"
 fi
 
 read -p "Push default[SIMPLE/matching]:" pushdef
@@ -35,7 +41,8 @@ fi
 git config --global user.name "$name"
 git config --global user.email "$email"
 git config --global core.editor "$editor"
-git config --global merge.tool "$difftool"
+git config --global diff.tool "$difftool"
+git config --global merge.tool "$mergetool"
 git config --global push.default "$pushdef"
 if [[ $credential =~ ^[Yy]$ ]]
 then
