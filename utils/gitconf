@@ -50,3 +50,8 @@ then
 else
 	git config --global --unset credential.helper 
 fi
+
+git config --global alias.ci commit
+git config --global alias.co checkout
+git config --global alias.undo reset --hard
+git config --global alias.st status
