@@ -2,6 +2,7 @@
 
 # @TODO: Create uninstall
 # @TODO: Check if all files are installed. If don't, install them.
+# @TODO: Soft link instead copy?
 utilpath=$(dirname $(readlink -f $0))
 cd $utilpath
 
