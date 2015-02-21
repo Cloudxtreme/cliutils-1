@@ -15,7 +15,7 @@ def sudo(task)
 end
 
 desc "Install cliutils"
-task :install do
+task :install do# {{{
 
 	files = file_list()
 
@@ -31,11 +31,10 @@ task :install do
 		sudo(:install)
 	end
 
-end
+end# }}}
 
 desc "Uninstall cliutils "
-task :uninstall do
-
+task :uninstall do# {{{
 	puts "Uninstalling..."
 	files=file_list()
 	
@@ -49,8 +48,9 @@ task :uninstall do
 	rescue
     	sudo(:uninstall)
 	end
-end
+end# }}}
 
 task :default => :install
 # task :default do
-# 	system 'rake -T' # end
+# 	system 'rake -T'
+# end
