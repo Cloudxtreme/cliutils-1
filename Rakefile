@@ -10,11 +10,8 @@ def file_list()
 end
 
 def sudo(task)
-	begin
+		puts "sudo"
 		system("sudo rake #{task}")
-	rescue
-		puts "Aborted"
-	end
 end
 
 desc "Install cliutils"
@@ -24,23 +21,29 @@ task :install do
 
 	puts "Installing..."
 
-	files.each do |file|
-		puts File.basename(file, ".py")
-		puts file
-		puts
+    begin
+		files.each do |file|
+			dest =  File.join("/usr/local/bin/", File.basename(file)) 
+			ln_s(File.expand_path(file), dest) if File.exists?(file) unless File.exists?(dest)
+		end
+		
+	rescue
+		sudo(:install)
 	end
 
 end
 
 desc "Uninstall cliutils "
 task :uninstall do
+
+	puts "Uninstalling..."
 	files=file_list()
 	
 	begin
 
 		files.each do |file|
-			installed="/usr/local/bin/"+File.basename(file)
-			rm installed
+			installed=File.join("/usr/local/bin/",File.basename(file))
+			rm installed 
 		end
 
 	rescue
@@ -50,5 +53,4 @@ end
 
 task :default => :install
 # task :default do
-# 	system 'rake -T'
-# end
+# 	system 'rake -T' # end
