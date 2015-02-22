@@ -21,7 +21,6 @@ Scripts Description
 * **media/chapters**: Create a chapters.txt file with mkv file clips in folder. Needs avprobe.
 * **utils/gitconf**: Prompt for global git config.
 * **utils/updateutils**: Install and update this repository in a computer.
-* **utils/updaterepos**: Update repo list given by ~/.local/repos.txt
 * **system/cleankernel**: Search old linux kernel and linux headers and show in a menu for remove. Needs dialog package.
 * **system/upgrade**: Run aptitude safe-upgrade and then cleans apt cache. Needs aptitude package.
 
