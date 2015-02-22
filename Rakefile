@@ -1,3 +1,4 @@
+#Return the file list to be installed
 def file_list()
 
 	files = FileList[
@@ -9,6 +10,7 @@ def file_list()
  	return files
 end
 
+#If rake has been run without sudo, try to rerun the task with it
 def sudo(task)
 		puts "sudo"
 		system("sudo rake #{task}")
