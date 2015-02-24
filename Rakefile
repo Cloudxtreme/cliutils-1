@@ -1,3 +1,9 @@
+#
+#
+#
+#FUNCTIONS 
+#
+#
 #Return the file list to be installed
 def file_list()
 
@@ -10,15 +16,29 @@ def file_list()
  	return files
 end
 
+#Return de list of aliases to add in the rc file
+def aliases()
+	aliases=[]
+	aliases << 'alias upgrade="aptitude update;aptitude -y safe-upgrade;aptitude clean"'
+	aliases << 'alias updateutils=""'
+end
+
 #If rake has been run without sudo, try to rerun the task with it
 def sudo(task)
 		puts "sudo"
 		system("sudo rake #{task}")
 end
 
+#
+#
+#TASKS
+#
+#
 desc "Install cliutils"
 task :install do# {{{
 
+	#TODO: Add aliases to rc files
+	#TODO: Deploy instead install?
 	files = file_list()
 
 	puts "Installing..."
