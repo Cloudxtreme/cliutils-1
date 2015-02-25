@@ -37,6 +37,8 @@ end
 desc "Install cliutils"
 task :install do# {{{
 
+	#TODO: Detect default shell and inject alias in the rc file
+	#TODO: Some command to add default aliases (gem?)
 	#TODO: Add aliases to rc files
 	#TODO: Deploy instead install?
 	files = file_list()
